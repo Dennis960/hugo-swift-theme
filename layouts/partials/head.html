@@ -14,4 +14,5 @@
   {{- partial "favicon" . }}
   <link rel=canonical href={{ .Permalink }}>
   {{ partialCached "styles" . }}
+  {{ partial "plausible_head.html" . }}
 </head>
