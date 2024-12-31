@@ -1,6 +1,5 @@
-{{ $bg := partial "func/getImage" . }}
 <li class="post_item fp">
-  <a class=post_card href={{ .Permalink }} title={{ .Title }} style="background-image: url({{  $bg }});">
+  <a class=post_card href={{ .Permalink }} title={{ .Title }} style="background-image: url({{ .Permalink }}{{ .Params.image }});">
   </a>
   <div class=excerpt>
     <div class=excerpt_meta>
