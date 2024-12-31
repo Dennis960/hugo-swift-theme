@@ -4,7 +4,7 @@
   <div class=excerpt>
     <div class=excerpt_meta>
     {{- with .Params.tags -}}
-      {{- range first 1 . }}
+      {{- range . }}
       {{- $tag := urlize . }}
       {{- $url := absURL (printf "tags/%s" $tag) }}
       <a href={{ $url }} class=post_tag>
@@ -17,6 +17,12 @@
     <h3 class=post_link>
       <a href={{ .Permalink }}>{{ .Title  }}</a>
     </h3>
-    <p class=pale>{{ truncate 90 .Summary }}</p>
+    <p class=pale>
+      {{ if .Params.description }}
+        {{ .Params.description }}
+      {{ else }}
+        {{ truncate 90 .Summary }}
+      {{ end }}
+    </p>
   </div>
 </li>
