@@ -3,7 +3,7 @@
 <div class="gallery">
   {{ range $index, $image := $images }}
   <figure class="gallery_item">
-    <img src="{{ absURL $image }} " class="gallery_image"{{ with $descriptions }}{{ with (index . $index) }} alt="{{ . }}"{{ end }}{{ end }}/>
+    <img src="{{ $image }}" class="gallery_image"{{ with $descriptions }}{{ with (index . $index) }} alt="{{ . }}"{{ end }}{{ end }}/>
   </figure>
   {{ end }}
 </div>
