@@ -14,6 +14,9 @@
     {{- end }}
     {{- partial "copy" . }}
     </div>
+    <p class="post_date" style="text-align: right;">
+      {{ .Date.Format "January 2, 2006" }}
+    </p>
     <h3 class=post_link>
       <a href={{ .Permalink }}>{{ .Title  }}</a>
     </h3>
